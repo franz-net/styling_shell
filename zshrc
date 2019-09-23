@@ -1,9 +1,22 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
+export ANSIBLE_COW_SELECTION=tux
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/franz/.oh-my-zsh"
+
+if [[ -o login ]]; then
+  GREEN="\e[92m"
+  LBLUE="\e[94m"
+  STOP="\e[0m"
+  printf "${GREEN}"
+  echo "FranzOs" | figlet
+  printf "${STOP}"
+  #printf "${LBLUE}"
+  #cowsay -f eyes "today is $(date)"
+  #printf "${STOP}"
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -18,9 +31,11 @@ POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon time battery user)
+POWERLEVEL9K_DISABLE_RPROMPT=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-#POWERLEVEL9K_COLOR_SCHEME='light'
+# POWERLEVEL9K_COLOR_SCHEME='light'
 
 
 ## SPACESHIP PARAMETERS ##
@@ -97,9 +112,10 @@ SPACESHIP_PROMPT_ORDER=( "user" "host" "dir" "char" )
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  sudo git history taskwarrior tmux tmuxinator zzh-completions zzh-syntax-highlighting
+  sudo git history taskwarrior tmux tmuxinator zsh-completions zsh-syntax-highlighting
 )
 autoload -U compinit && compinit
+# source /Users/franz/.oh-my-zsh/custom/plugins/zsh-completions
 # source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 
 source ~/.fonts/*.sh
