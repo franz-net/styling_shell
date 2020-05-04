@@ -4,14 +4,14 @@ export TERM="xterm-256color"
 export ANSIBLE_COW_SELECTION=tux
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/franz/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 if [[ -o login ]]; then
   GREEN="\e[92m"
   LBLUE="\e[94m"
   STOP="\e[0m"
   printf "${GREEN}"
-  echo "FranzOs" | figlet
+  echo "WELCOME" | figlet
   printf "${STOP}"
   #printf "${LBLUE}"
   #cowsay -f eyes "today is $(date)"
@@ -115,7 +115,7 @@ plugins=(
   sudo git history taskwarrior tmux tmuxinator zsh-completions zsh-syntax-highlighting
 )
 autoload -U compinit && compinit
-# source /Users/franz/.oh-my-zsh/custom/plugins/zsh-completions
+# source ~/.oh-my-zsh/custom/plugins/zsh-completions
 # source $ZSH/oh-my-zsh.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh 
 source ~/.fonts/*.sh
@@ -161,7 +161,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/Cellar/terraform/0.11.8/bin/terraform terraform
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/franz/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/franz/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '~/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '~/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/franz/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/franz/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '~/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '~/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
